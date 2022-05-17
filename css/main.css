@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand&family=Roboto+Flex:opsz,wght@8..144,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*::selection {
+    background-color: #ff0000;
+    color: rgb(2, 6, 2); 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --maincolor: rgb(238, 242, 190);
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: rgb(212, 229, 200);
+    background-image: url(https://www.familienservice.de/documents/20228/124394/Umwelt+und+Klima.png/6f1344bb-5968-4297-b6b8-b1b77bf46838?t=1642690700743&imageThumbnail=1);
+    background-size: cover;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    opacity: .8;
+    background-color: rgb(76, 220, 47);
+}
+
+ul {
+    list-style: none;
+}
+
+    
+       /* Small */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+        /* Medium */
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+        /* Large */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    padding: 15px;
+    background-color: var(--maincolor, #111);
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 40%);
+}
+
+
+/* ----------------------------------- */
+
+
+.herz {
+    width: 40px;
+    height: 60px;
+    background: rgb(255, 0, 0, 0.9);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 100px;
+    position: relative;
+    display: inline-block;
+    animation: herz 1s infinite linear alternate-reverse both;
+    border: 1px solid rgb(154, 255, 2);
+}
+.herz::before {
+    content: "";
+    width: 40px;
+    height: 60px;
+    background-color: rgb(255, 0, 0, 0.6);
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 100px;
+    transform: rotate(90deg);
+    border: 1px solid rgb(227, 253, 189);
+    box-shadow: 2px -5px 20px black;
+}
+.herz::after {
+    content: "Umweltschutz";
+    position: absolute;
+    top: -8px;
+    left: 40px;
+    width: 180px;
+    font-size: 30px;
+    display: inline-block;
+    text-shadow: 2px 2px 1px rgb(0, 0, 0);
+}
+
+@keyframes herz {
+    0% {
+        transform: scale(1);
+        background-color: rgba(179, 255, 0, 0.5);
+        color: rgba(179, 255, 0, 0.5);
+        box-shadow: -3px -3px 10px black;
+    }
+    50% {
+        transform: scale(.9);
+        background-color: rgb(12, 24, 20, 0.5);
+        color: rgb(12, 24, 20);
+    }
+    100% {
+        transform: scale(1) rotate(3deg);
+        background-color: rgba(255, 0, 51, 0.6);
+        color: rgb(255, 0, 51);
+    }
+
+}
+.herz:hover {
+    animation-play-state: paused;
+}
+header {
+    position: sticky;
+    top: 10px;
+    padding: 20px;
+    z-index: 1;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container .links {
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgba(217, 225, 105, 0.5);
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+}
+
+header .container .links a {
+    color: black;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+header .container a:hover {
+    transform: scale(1.1) rotate(1deg);
+    color: #ff0000;
+}
+.blockquote {
+    text-align: center;
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+.blockquote i:first-of-type {
+    transform: translateX(-210px);
+}
+.blockquote i:last-of-type {
+    transform: translateX(210px) rotateY(180deg);
+}
+@media (max-width: 767px) {
+    header .container .links {
+        position: absolute;
+        top: 90px;
+        left: 80px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        margin: 20px auto;
+    }
+    header .container .links a {
+        padding: 5px 5px;
+        margin: 5px;
+        display: block;
+        border-bottom: 1px solid;
+        font-size: 15px;
+    }
+    .blockquote {
+        top: 290px;
+        position: absolute;
+    }
+    .blockquote i {
+        display: none;
+    }
+}
+
+.landing {
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.landing .intro {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    padding: 50px;
+    background-color: var(--maincolor);
+    color: black;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.landing .intro i {
+    font-size: 40px;
+    position: relative;
+    bottom: 30px;
+    color: rgb(15, 136, 4);
+}
+
+.landing .intro .content {
+    max-width: 500px;
+}
+
+.landing .intro .content h2 {
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.landing .intro .content article {
+    font-size: 15px;
+    line-height: 1.5;
+}
+.landing .intro .content a {
+    text-decoration: none;
+    display: block;
+    background-color: rgba(217, 225, 105);
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+    font-size: 17px;
+    border-radius: 5px;
+    color: #1b03b8;
+    transition: 0.3s;
+}
+.landing .intro .content a:hover {
+    transform: scale(1.1);
+    color:red;
+    font-weight: bold;
+}
+@media (max-width: 767px) {
+        .landing {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr) );
+        max-width: 100vw;
+    } 
+    .landing .intro {
+        width: 100%;
+    }
+}
+
+main {
+    position: relative;
+}
+
+main .main-head {
+    margin: 30px 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+main .main-head h2 {
+    font-weight: bold;
+    font-size: 40px;
+}
+main .main-head p {
+    font-size: 20px;
+}
+
+.plastic {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+   align-items: center;
+}
+.plastic .image {
+   position: relative;   
+}
+.plastic .image img {
+    position: relative;
+    top: 125px;
+    width: 40vw;
+    height: 70vh;
+    border-radius: 1%;
+
+}
+.plastic article {
+    transform: translateY(40%);
+    font-size: 20px;
+    line-height: 1.8;
+    padding: 20px;
+    color: #000;
+    background-color: rgb(219, 242, 143);
+    transform: translateY(90px);
+    text-shadow: 1px 1px 0 rgb(48, 255, 2);
+    box-shadow: 1px 1px 1px 2px rgb(1, 8, 1) ;
+}
+.plastic a {
+    text-decoration: none;
+    display: block;
+    background-color: rgba(217, 225, 105);
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+    color: #000000;
+    transition: 0.3s;
+}
+.plastic a:hover {
+    transform: scale(1.1);
+    font-weight: bold;
+}
+.plastic a:active {
+    color: yellow;
+}
+.plastic a:visited {
+    color: rgb(255, 0, 255);
+}
+@media (max-width: 991px) {
+    .main-head {
+        display: none;
+    }
+    .plastic {
+        position: relative;
+    }
+    .plastic .image {
+        display: none;
+    }
+    .plastic article {
+        line-height: 1.3;
+        margin-top: 80px;
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(217, 225, 105, 0.5);
+    padding: 15px;
+}
+footer .copy {
+    display: grid;
+    justify-content: center;
+    font-weight: bold;
+}
